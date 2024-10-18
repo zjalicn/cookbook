@@ -25,47 +25,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-
-const workoutSteps = [
-  {
-    name: "High Knees",
-    duration: 30,
-    description: "Run in place, lifting your knees high",
-  },
-  { name: "Rest", duration: 10, description: "Take a brief break" },
-  {
-    name: "Burpees",
-    duration: 30,
-    description: "Do a pushup, then jump with hands overhead",
-  },
-  { name: "Rest", duration: 10, description: "Take a brief break" },
-  {
-    name: "Mountain Climbers",
-    duration: 30,
-    description: "Alternate bringing knees to chest in plank position",
-  },
-  { name: "Rest", duration: 10, description: "Take a brief break" },
-  {
-    name: "Jump Squats",
-    duration: 30,
-    description: "Do a squat, then jump up with arms raised",
-  },
-  { name: "Rest", duration: 10, description: "Take a brief break" },
-  { name: "Plank", duration: 30, description: "Hold a forearm plank position" },
-  {
-    name: "Cool Down",
-    duration: 60,
-    description: "Stretch and breathe deeply",
-  },
-];
-
-const timerTypes = [
-  { name: "HIIT Workout", id: "hiit" },
-  { name: "Tabata", id: "tabata" },
-  { name: "Pomodoro", id: "pomodoro" },
-  { name: "Custom", id: "custom" },
-];
-
+import { workoutSteps, timerTypes } from "@/constants";
 export default function Component() {
   const [currentStep, setCurrentStep] = useState(0);
   const [timeLeft, setTimeLeft] = useState(workoutSteps[0].duration);
@@ -233,7 +193,7 @@ export default function Component() {
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
       <div className="w-64 bg-white border-r p-4">
-        <h2 className="text-lg font-semibold mb-4">Timer Types</h2>
+        <h2 className="text-lg font-semibold mb-4">Recipes</h2>
         <ul>
           {timerTypes.map((timer) => (
             <li key={timer.id} className="mb-2">
